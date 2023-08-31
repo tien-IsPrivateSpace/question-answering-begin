@@ -1,0 +1,29 @@
+.flex {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-1 {
+  flex: 1;
+}
+.font-base {
+  font-size: 24rpx;
+}
+.font-lg {
+  font-size: 30rpx;
+}
+.w-full {
+  width: 100%;
+}

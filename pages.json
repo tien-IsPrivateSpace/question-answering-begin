@@ -1,0 +1,66 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "小墨问答"
+			}
+		},
+		{
+			"path": "pages/creations/creations",
+			"style": {
+				"navigationBarTitleText": "创作"
+			}
+		},
+		{
+			"path": "pages/periphery/periphery",
+			"style": {
+				"navigationBarTitleText": "生活"
+			}
+		}
+	    ,{
+            "path" : "pages/mine/mine",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的"
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#5088D1",
+		"backgroundColor": "#5088D1"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"selectedColor": "#5088D1",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabBar/index.png",
+				"selectedIconPath": "static/tabBar/indexHL.png",
+				"text": "问答"
+			},
+			{
+				"pagePath": "pages/creations/creations",
+				"iconPath": "static/tabBar/creations.png",
+				"selectedIconPath": "static/tabBar/creationsHL.png",
+				"text": "创作"
+			},
+			{
+				"pagePath": "pages/periphery/periphery",
+				"iconPath": "static/tabBar/periphery.png",
+				"selectedIconPath": "static/tabBar/peripheryHL.png",
+				"text": "生活"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"iconPath": "static/tabBar/mine.png",
+				"selectedIconPath": "static/tabBar/mineHL.png",
+				"text": "我的"
+			}
+		]
+	}
+}
