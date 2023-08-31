@@ -3,7 +3,7 @@ const common_vendor = require("../../common/vendor.js");
 const _sfc_main = {
   data() {
     return {
-      title: "Hello"
+      title: "Hello111"
     };
   },
   onLoad() {
