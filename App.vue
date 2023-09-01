@@ -16,8 +16,6 @@
 </script>
 
 <style lang="scss">
-	
-	
 	/*每个页面公共css */
 	@import '@/uni_modules/uni-scss/index.scss';
 	/* uni.css - 通用组件、模板样式库，可以当作一套ui库应用 */
