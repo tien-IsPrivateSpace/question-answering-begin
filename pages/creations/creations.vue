@@ -25,28 +25,28 @@ onLoad((option) => {
 </script>
 
 <template>
-  <div class="container">
+  <view class="container">
     <view class="header">
       <view class="header-h2">Tian's ChatGPT</view>
       <view class="font-base">Build your own AI assistant.</view>
     </view>
-    <div class="main">
-      <div class="list w-full">
-        <div
+    <view class="main">
+      <view class="list w-full">
+        <view
           @click="handleClick(item)"
           class="list-item"
           :key="item.id"
           v-for="item in mockData"
         >
           <strong class="list-item-title font-lg">{{ item.title }}</strong>
-          <div class="list-item-bottom flex justify-between font-base">
+          <view class="list-item-bottom flex justify-between font-base">
             <span>{{ item.count }}条对话</span>
             <span>{{ item.time }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <style lang="scss" scoped>

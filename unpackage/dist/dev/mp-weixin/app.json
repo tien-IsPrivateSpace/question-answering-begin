@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/creations/creations",
     "pages/periphery/periphery",
     "pages/mine/mine"
@@ -14,12 +13,6 @@
   "tabBar": {
     "selectedColor": "#5088D1",
     "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "static/tabBar/index.png",
-        "selectedIconPath": "static/tabBar/indexHL.png",
-        "text": "问答"
-      },
       {
         "pagePath": "pages/creations/creations",
         "iconPath": "static/tabBar/creations.png",
