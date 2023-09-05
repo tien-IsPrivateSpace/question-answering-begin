@@ -27,7 +27,7 @@
   padding: 20rpx;
   background: -webkit-linear-gradient(315deg, #e7f8ff 25%, #d8f4f9);
 }
-.header img.data-v-7c2ebfa5 {
+.header image.data-v-7c2ebfa5 {
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
