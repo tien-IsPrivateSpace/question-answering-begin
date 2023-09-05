@@ -5,14 +5,14 @@ const mockData = [
     id: 1,
     title: '对话1',
     count: 2,
-    time: '2023-08-30 22:33'
+    time: '2023-08-30 22:33',
   },
   {
     id: 2,
     title: '对话2',
     count: 3,
-    time: '2023-08-30 23:44'
-  }
+    time: '2023-08-30 23:44',
+  },
 ]
 
 function handleClick(item) {
@@ -26,13 +26,18 @@ onLoad((option) => {
 
 <template>
   <div class="container">
-    <header>
-      <h2>Tian's ChatGPT</h2>
-      <p class="font-base">Build your own AI assistant.</p>
-    </header>
-    <main>
+    <div class="header">
+      <div class="header-title">Tian's ChatGPT</div>
+      <div class="font-base">Build your own AI assistant.</div>
+    </div>
+    <div class="main">
       <div class="list w-full">
-        <div @click="handleClick(item)" class="list-item" :key="item.id" v-for="item in mockData">
+        <div
+          @click="handleClick(item)"
+          class="list-item"
+          :key="item.id"
+          v-for="item in mockData"
+        >
           <strong class="list-item-title font-lg">{{ item.title }}</strong>
           <div class="list-item-bottom flex justify-between font-base">
             <span>{{ item.count }}条对话</span>
@@ -40,7 +45,7 @@ onLoad((option) => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   </div>
 </template>
 
@@ -50,16 +55,18 @@ uni-page-body {
 }
 .container {
   height: 100%;
-  header {
+  .header {
     padding: 20rpx;
-    h2 {
+    .header-title {
+      font-size: 36rpx;
+      font-weight: bold;
       background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }
-  main {
+  .main {
     .list {
       .list-item {
         margin: 20rpx;
