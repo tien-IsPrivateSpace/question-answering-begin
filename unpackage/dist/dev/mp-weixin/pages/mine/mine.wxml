@@ -1,1 +1,1 @@
-<view></view>
+<view class="data-v-7c2ebfa5"><view class="flex items-center data-v-7c2ebfa5"><image class="data-v-7c2ebfa5" src="{{a}}"/><view class="flex-col header-spans data-v-7c2ebfa5"><label class="font-lg data-v-7c2ebfa5">超大佬</label><label class="font-base data-v-7c2ebfa5">超大佬的小程序</label></view></view><view class="data-v-7c2ebfa5"><view wx:for="{{b}}" wx:for-item="item" class="data-v-7c2ebfa5">列表{{item.a}}</view></view></view>
