@@ -1,6 +1,6 @@
 <script setup>
 import { onLoad } from '@dcloudio/uni-app'
-const mockData = [ 
+const mockData = [
   {
     id: 1,
     title: '对话1',
