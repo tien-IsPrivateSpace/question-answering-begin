@@ -38,7 +38,7 @@ onLoad((option) => {
           :key="item.id"
           v-for="item in mockData"
         >
-          <strong class="list-item-title font-lg">{{ item.title }}</strong>
+          <div class="list-item-title font-lg">{{ item.title }}</div>
           <div class="list-item-bottom flex justify-between font-base">
             <span>{{ item.count }}条对话</span>
             <span>{{ item.time }}</span>
@@ -75,6 +75,9 @@ uni-page-body {
         border-radius: 20rpx;
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
         border: 4rpx solid #c0eaf3;
+        .list-item-title {
+          font-weight: bold;
+        }
 
         .list-item-bottom {
           margin-top: 10rpx;

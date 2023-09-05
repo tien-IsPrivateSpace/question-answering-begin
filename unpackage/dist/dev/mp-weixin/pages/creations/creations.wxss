@@ -48,6 +48,9 @@ uni-page-body.data-v-210e2343 {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
   border: 4rpx solid #c0eaf3;
 }
+.container .main .list .list-item .list-item-title.data-v-210e2343 {
+  font-weight: bold;
+}
 .container .main .list .list-item .list-item-bottom.data-v-210e2343 {
   margin-top: 10rpx;
   color: #666;
