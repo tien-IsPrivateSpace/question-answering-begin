@@ -1,16 +1,16 @@
 /**
  * 请求组件封装
- * @param {Object} url            请求地址  /banner
- * @param {Object} data            请求参数
- * @param {Object} method        请求的方法
- * @param {Object} contentType    请求内容类型
+ * @param {string} url            请求地址  /banner
+ * @param {string} data            请求参数
+ * @param {string} method        请求的方法
+ * @param {string} contentType    请求内容类型
  */
 function request({url, data, method = "GET", contentType = 1}) {
     let header = {
         'content-type': contentType === 1 ? 'application/json' : 'application/x-www-form-urlencoded'
     }
     //请求域名
-    let baseUrl = "http://localhost:8000";
+    let baseUrl = "http://ieyzyg.natappfree.cc";
     return new Promise((resolve, reject) => {
         uni.request({
             url: baseUrl + url,
