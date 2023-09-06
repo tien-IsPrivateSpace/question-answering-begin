@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/creations/creations",
+    "pages/index/index",
     "pages/periphery/periphery",
     "pages/mine/mine"
   ],
@@ -18,6 +19,12 @@
         "iconPath": "static/tabBar/creations.png",
         "selectedIconPath": "static/tabBar/creationsHL.png",
         "text": "创作"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabBar/index.png",
+        "selectedIconPath": "static/tabBar/indexHL.png",
+        "text": "问答"
       },
       {
         "pagePath": "pages/periphery/periphery",

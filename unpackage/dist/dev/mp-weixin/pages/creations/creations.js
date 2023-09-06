@@ -38,5 +38,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-210e2343"], ["__file", "C:/Users/81910/Desktop/code/js_code/question-answering-begin/pages/creations/creations.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-210e2343"], ["__file", "/Users/huamo/project/DisplayProject/qa/pages/creations/creations.vue"]]);
 wx.createPage(MiniProgramPage);

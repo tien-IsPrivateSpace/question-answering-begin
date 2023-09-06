@@ -1,7 +1,7 @@
 <script setup>
 function test() {
   const requestTask = uni.request({
-    url: 'http://n4mt5q.natappfree.cc/question',
+    url: 'http://2y5wzj.natappfree.cc/question',
     timeout: 15000,
     responseType: 'text',
     method: 'POST',
