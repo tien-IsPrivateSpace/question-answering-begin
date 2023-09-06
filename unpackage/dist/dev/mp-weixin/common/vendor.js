@@ -6712,6 +6712,7 @@ const onLoad = /* @__PURE__ */ createHook(ON_LOAD);
 exports._export_sfc = _export_sfc;
 exports.createSSRApp = createSSRApp;
 exports.f = f;
+exports.index = index;
 exports.o = o;
 exports.onHide = onHide;
 exports.onLaunch = onLaunch;

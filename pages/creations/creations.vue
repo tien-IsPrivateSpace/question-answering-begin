@@ -1,27 +1,27 @@
 <script setup>
-import { onLoad } from "@dcloudio/uni-app";
+import { onLoad } from '@dcloudio/uni-app'
 const mockData = [
   {
     id: 1,
-    title: "对话1",
+    title: '对话1',
     count: 2,
-    time: "2023-08-30 22:33",
+    time: '2023-08-30 22:33',
   },
   {
     id: 2,
-    title: "对话2",
+    title: '对话2',
     count: 3,
-    time: "2023-08-30 23:44",
+    time: '2023-08-30 23:44',
   },
-];
+]
 
 function handleClick(item) {
-  console.log(item);
+  console.log(item)
 }
 
 onLoad((option) => {
-  console.log("creations load");
-});
+  console.log('creations load')
+})
 </script>
 
 <template>
@@ -57,7 +57,9 @@ uni-page-body {
   height: 100%;
   .header {
     padding: 20rpx;
-    .header-h2 {
+    .header-title {
+      font-size: 36rpx;
+      font-weight: bold;
       background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
       background-clip: text;
       -webkit-background-clip: text;
@@ -73,6 +75,9 @@ uni-page-body {
         border-radius: 20rpx;
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
         border: 4rpx solid #c0eaf3;
+        .list-item-title {
+          font-weight: bold;
+        }
 
         .list-item-bottom {
           margin-top: 10rpx;
