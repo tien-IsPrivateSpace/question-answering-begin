@@ -23,35 +23,142 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-uni-page-body.data-v-210e2343 {
-  background-color: #e7f8ff !important;
+view.data-v-210e2343,
+button.data-v-210e2343,
+text.data-v-210e2343,
+input.data-v-210e2343,
+textarea.data-v-210e2343 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.container.data-v-210e2343 {
-  height: 100%;
+
+/* 聊天消息 */
+.chat.data-v-210e2343 {
+  /* 底部聊天发送栏 */
 }
-.container .header.data-v-210e2343 {
-  padding: 20rpx;
+.chat .scroll-view.data-v-210e2343 {
+  background-color: #f6f6f6;
 }
-.container .header .header-title.data-v-210e2343 {
-  font-size: 36rpx;
-  font-weight: bold;
-  background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.chat .scroll-view.data-v-210e2343 ::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+  color: transparent;
 }
-.container .main .list .list-item.data-v-210e2343 {
-  margin: 20rpx;
-  padding: 26rpx 30rpx;
-  background-color: white;
-  border-radius: 20rpx;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
-  border: 4rpx solid #c0eaf3;
+.chat .scroll-view .chat-body.data-v-210e2343 {
+  display: flex;
+  flex-direction: column;
+  padding-top: 23rpx;
 }
-.container .main .list .list-item .list-item-title.data-v-210e2343 {
-  font-weight: bold;
+.chat .scroll-view .chat-body .self.data-v-210e2343 {
+  justify-content: flex-end;
 }
-.container .main .list .list-item .list-item-bottom.data-v-210e2343 {
-  margin-top: 10rpx;
-  color: #666;
+.chat .scroll-view .chat-body .item.data-v-210e2343 {
+  display: flex;
+  padding: 23rpx 30rpx;
+}
+.chat .scroll-view .chat-body .item .right.data-v-210e2343 {
+  background-color: #c2dcff;
+}
+.chat .scroll-view .chat-body .item .left.data-v-210e2343 {
+  background-color: #ffffff;
+}
+.chat .scroll-view .chat-body .item .right.data-v-210e2343::after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  left: 100%;
+  top: 10px;
+  border: 12rpx solid transparent;
+  border-left: 12rpx solid #c2dcff;
+}
+.chat .scroll-view .chat-body .item .left.data-v-210e2343::after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  top: 10px;
+  right: 100%;
+  border: 12rpx solid transparent;
+  border-right: 12rpx solid #ffffff;
+}
+.chat .scroll-view .chat-body .item .content.data-v-210e2343 {
+  position: relative;
+  max-width: 486rpx;
+  border-radius: 8rpx;
+  word-wrap: break-word;
+  padding: 24rpx 24rpx;
+  margin: 0 24rpx;
+  border-radius: 5px;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 42rpx;
+}
+.chat .scroll-view .chat-body .item .avatar.data-v-210e2343 {
+  display: flex;
+  justify-content: center;
+  width: 78rpx;
+  height: 78rpx;
+  background: #4f7df5;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.chat .scroll-view .chat-body .item .avatar image.data-v-210e2343 {
+  align-self: center;
+}
+.chat .chat-bottom.data-v-210e2343 {
+  width: 100%;
+  height: 177rpx;
+  background: #f4f5f7;
+  transition: all 0.1s ease;
+}
+.chat .chat-bottom .send-msg.data-v-210e2343 {
+  display: flex;
+  align-items: flex-end;
+  padding: 16rpx 30rpx;
+  width: 100%;
+  min-height: 177rpx;
+  position: fixed;
+  bottom: 0;
+  background: #ededed;
+  transition: all 0.1s ease;
+}
+.chat .chat-bottom .uni-textarea.data-v-210e2343 {
+  padding-bottom: 70rpx;
+}
+.chat .chat-bottom .uni-textarea textarea.data-v-210e2343 {
+  width: 537rpx;
+  min-height: 75rpx;
+  max-height: 500rpx;
+  background: #ffffff;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  color: #333333;
+  line-height: 43rpx;
+  padding: 5rpx 8rpx;
+}
+.chat .chat-bottom .send-btn.data-v-210e2343 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70rpx;
+  margin-left: 25rpx;
+  width: 128rpx;
+  height: 75rpx;
+  background: #4f7df5;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 28rpx;
 }

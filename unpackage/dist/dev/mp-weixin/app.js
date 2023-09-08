@@ -23,7 +23,7 @@ const _sfc_main = {
     };
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "/Users/huamo/project/DisplayProject/qa/App.vue"]]);
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/81910/Desktop/code/js_code/question-answering-begin/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   return {

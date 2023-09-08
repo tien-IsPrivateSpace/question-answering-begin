@@ -3,35 +3,40 @@ const common_vendor = require("../../common/vendor.js");
 const _sfc_main = {
   __name: "index",
   setup(__props) {
-    function test() {
-      const requestTask = common_vendor.index.request({
-        url: "http://n4mt5q.natappfree.cc/question",
-        timeout: 15e3,
-        responseType: "text",
-        method: "POST",
-        enableChunked: true,
-        data: {
-          question: "how are you?"
-        },
-        success: (response) => {
-          console.log(response);
-        },
-        fail: (error) => {
-        }
-      });
-      requestTask.onHeadersReceived(function(res) {
-        console.log(res);
-      });
-      requestTask.onChunkReceived(function(res) {
-        console.log(res);
-      });
+    const mockData = [
+      {
+        id: 1,
+        title: "对话1",
+        count: 2,
+        time: "2023-08-30 22:33"
+      },
+      {
+        id: 2,
+        title: "对话2",
+        count: 3,
+        time: "2023-08-30 23:44"
+      }
+    ];
+    function handleClick(item) {
+      console.log(item);
     }
+    common_vendor.onLoad((option) => {
+      console.log("creations load");
+    });
     return (_ctx, _cache) => {
       return {
-        a: common_vendor.o(test)
+        a: common_vendor.f(mockData, (item, k0, i0) => {
+          return {
+            a: common_vendor.t(item.title),
+            b: common_vendor.t(item.count),
+            c: common_vendor.t(item.time),
+            d: common_vendor.o(($event) => handleClick(item), item.id),
+            e: item.id
+          };
+        })
       };
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "/Users/huamo/project/DisplayProject/qa/pages/index/index.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-1cf27b2a"], ["__file", "C:/Users/81910/Desktop/code/js_code/question-answering-begin/pages/index/index.vue"]]);
 wx.createPage(MiniProgramPage);

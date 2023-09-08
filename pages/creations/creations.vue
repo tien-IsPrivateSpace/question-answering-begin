@@ -18,12 +18,12 @@
               {{ item.userContent }}
             </view>
             <!-- 头像 -->
-            <view class="avatar"> </view>
+            <view class="avatar"></view>
           </view>
           <!-- 机器人发的消息 -->
           <view class="item Ai" v-if="item.botContent != ''">
             <!-- 头像 -->
-            <view class="avatar"> </view>
+            <view class="avatar"></view>
             <!-- 文字内容 -->
             <view class="content left">
               {{ item.botContent }}
@@ -56,7 +56,9 @@
   </view>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { onLoad, onUnload } from '@dcloudio/uni-app'
+
 const keyboardHeight = ref(0)
 const bottomHeight = ref(0)
 const scrollTop = ref(0)
@@ -68,20 +70,18 @@ const msgList = ref([
     recordId: 0,
     titleId: 0,
     userContent: '',
-    userId: 0,
+    userId: 0
   },
   {
     botContent: '',
     recordId: 0,
     titleId: 0,
     userContent: '你好呀我想问你一件事',
-    userId: 0,
-  },
+    userId: 0
+  }
 ])
 
-const windowHeight = computed(() =>
-  rpxTopx(uni.getSystemInfoSync().windowHeight)
-)
+const windowHeight = computed(() => rpxTopx(uni.getSystemInfoSync().windowHeight))
 
 const inputHeight = computed(() => bottomHeight.value + keyboardHeight.value)
 
@@ -94,20 +94,6 @@ function rpxTopx(px) {
 function updated() {
   scrollToBottom()
 }
-
-onLoad((option) => {
-  uni.onKeyboardHeightChange((res) => {
-    //这里正常来讲代码直接写
-    //this.keyboardHeight=this.rpxTopx(res.height)
-    //但是之前界面ui设计聊天框的高度有点高,为了不让键盘和聊天输入框之间距离差太大所以我改动了一下。
-    this.keyboardHeight = this.rpxTopx(res.height - 30)
-    if (this.keyboardHeight < 0) this.keyboardHeight = 0
-  })
-})
-
-onUnload(() => {
-  uni.offKeyboardHeightChange()
-})
 
 function focus() {
   scrollToBottom()
@@ -128,10 +114,11 @@ function sendHeight() {
 
 function scrollToBottom(e) {
   setTimeout(() => {
-    let query = uni.createSelectorQuery().in(this)
+    let query = uni.createSelectorQuery()
     query.select('#scrollview').boundingClientRect()
     query.select('#msglistview').boundingClientRect()
     query.exec((res) => {
+      console.log(res)
       if (res[1].height > res[0].height) {
         scrollTop.value = rpxTopx(res[1].height - res[0].height)
       }
@@ -140,21 +127,34 @@ function scrollToBottom(e) {
 }
 
 function handleSend() {
-  if (!this.chatMsg || !/^\s+$/.test(this.chatMsg)) {
+  if (!chatMsg.value || !/^\s+$/.test(chatMsg.value)) {
     let obj = {
       botContent: '',
       recordId: 0,
       titleId: 0,
-      userContent: this.chatMsg,
-      userId: 0,
+      userContent: chatMsg.value,
+      userId: 0
     }
-    this.msgList.push(obj)
-    this.chatMsg = ''
-    this.scrollToBottom()
+    msgList.value.push(obj)
+    chatMsg.value = ''
+    scrollToBottom()
   } else {
-    this.$modal.showToast('不能发送空白消息')
+    // showToast('不能发送空白消息')
   }
 }
+
+onLoad((option) => {
+  uni.onKeyboardHeightChange((res) => {
+    keyboardHeight.value = rpxTopx(res.height - 30)
+    if (keyboardHeight.value < 0) {
+      keyboardHeight.value = 0
+    }
+  })
+})
+
+onUnload(() => {
+  uni.offKeyboardHeightChange()
+})
 </script>
 <style lang="scss" scoped>
 $chatContentbgc: #c2dcff;
