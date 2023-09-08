@@ -105,59 +105,55 @@ onLoad((option) => {
   })
 })
 
-export default {
-  onUnload() {
-    uni.offKeyboardHeightChange()
-  },
-  methods: {
-    focus() {
-      this.scrollToBottom()
-    },
-    blur() {
-      this.scrollToBottom()
-    },
-    // 监视聊天发送栏高度
-    sendHeight() {
-      setTimeout(() => {
-        let query = uni.createSelectorQuery()
-        query.select('.send-msg').boundingClientRect()
-        query.exec((res) => {
-          this.bottomHeight = this.rpxTopx(res[0].height)
-        })
-      }, 10)
-    },
-    // 滚动至聊天底部
-    scrollToBottom(e) {
-      setTimeout(() => {
-        let query = uni.createSelectorQuery().in(this)
-        query.select('#scrollview').boundingClientRect()
-        query.select('#msglistview').boundingClientRect()
-        query.exec((res) => {
-          if (res[1].height > res[0].height) {
-            this.scrollTop = this.rpxTopx(res[1].height - res[0].height)
-          }
-        })
-      }, 15)
-    },
-    // 发送消息
-    handleSend() {
-      //如果消息不为空
-      if (!this.chatMsg || !/^\s+$/.test(this.chatMsg)) {
-        let obj = {
-          botContent: '',
-          recordId: 0,
-          titleId: 0,
-          userContent: this.chatMsg,
-          userId: 0,
-        }
-        this.msgList.push(obj)
-        this.chatMsg = ''
-        this.scrollToBottom()
-      } else {
-        this.$modal.showToast('不能发送空白消息')
+onUnload(() => {
+  uni.offKeyboardHeightChange()
+})
+
+function focus() {
+  scrollToBottom()
+}
+function blur() {
+  scrollToBottom()
+}
+
+function sendHeight() {
+  setTimeout(() => {
+    let query = uni.createSelectorQuery()
+    query.select('.send-msg').boundingClientRect()
+    query.exec((res) => {
+      bottomHeight.value = rpxTopx(res[0].height)
+    })
+  }, 10)
+}
+
+function scrollToBottom(e) {
+  setTimeout(() => {
+    let query = uni.createSelectorQuery().in(this)
+    query.select('#scrollview').boundingClientRect()
+    query.select('#msglistview').boundingClientRect()
+    query.exec((res) => {
+      if (res[1].height > res[0].height) {
+        scrollTop.value = rpxTopx(res[1].height - res[0].height)
       }
-    },
-  },
+    })
+  }, 15)
+}
+
+function handleSend() {
+  if (!this.chatMsg || !/^\s+$/.test(this.chatMsg)) {
+    let obj = {
+      botContent: '',
+      recordId: 0,
+      titleId: 0,
+      userContent: this.chatMsg,
+      userId: 0,
+    }
+    this.msgList.push(obj)
+    this.chatMsg = ''
+    this.scrollToBottom()
+  } else {
+    this.$modal.showToast('不能发送空白消息')
+  }
 }
 </script>
 <style lang="scss" scoped>
